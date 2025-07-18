@@ -1,4 +1,5 @@
 import expoConfig from 'eslint-config-expo/flat.js';
+import prettier from 'eslint-config-prettier/flat';
 import perfectionist from 'eslint-plugin-perfectionist';
 import unicorn from 'eslint-plugin-unicorn';
 import { defineConfig } from 'eslint/config';
@@ -36,6 +37,7 @@ export default defineConfig([
       'perfectionist/sort-imports': ['error', { newlinesBetween: 'never' }],
     },
   },
+  prettier,
   // unicorn 플러그인이 ES 모듈로 작성되어 ESLint 파서와 호환성 문제가 있음
   {
     files: ['eslint.config.mjs'],
