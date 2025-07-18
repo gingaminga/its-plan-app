@@ -6,12 +6,12 @@
  * You can remove the `reset-project` script from package.json and safely delete this file after running it.
  */
 
-const fs = require("fs");
-const path = require("path");
-const readline = require("readline");
+const fs = require("node:fs");
+const path = require("node:path");
+const readline = require("node:readline");
 
 const root = process.cwd();
-const oldDirs = ["app", "components", "hooks", "constants", "scripts"];
+const oldDirectories = ["app", "components", "hooks", "constants", "scripts"];
 const exampleDir = "app-example";
 const newAppDir = "app";
 const exampleDirPath = path.join(root, exampleDir);
@@ -54,7 +54,7 @@ const moveDirectories = async (userInput) => {
     }
 
     // Move old directories to new app-example directory or delete them
-    for (const dir of oldDirs) {
+    for (const dir of oldDirectories) {
       const oldDirPath = path.join(root, dir);
       if (fs.existsSync(oldDirPath)) {
         if (userInput === "y") {
@@ -62,7 +62,7 @@ const moveDirectories = async (userInput) => {
           await fs.promises.rename(oldDirPath, newDirPath);
           console.log(`➡️ /${dir} moved to /${exampleDir}/${dir}.`);
         } else {
-          await fs.promises.rm(oldDirPath, { recursive: true, force: true });
+          await fs.promises.rm(oldDirPath, { force: true, recursive: true });
           console.log(`❌ /${dir} deleted.`);
         }
       } else {

@@ -1,6 +1,5 @@
 import { Image } from 'expo-image';
 import { Platform, StyleSheet } from 'react-native';
-
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
@@ -9,7 +8,7 @@ import { ThemedView } from '@/components/ThemedView';
 export default function HomeScreen() {
   return (
     <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
+      headerBackgroundColor={{ dark: '#1D3D47', light: '#A1CEDC' }}
       headerImage={
         <Image
           source={require('@/assets/images/partial-react-logo.png')}
@@ -27,8 +26,8 @@ export default function HomeScreen() {
           Press{' '}
           <ThemedText type="defaultSemiBold">
             {Platform.select({
-              ios: 'cmd + d',
               android: 'cmd + m',
+              ios: 'cmd + d',
               web: 'F12',
             })}
           </ThemedText>{' '}
@@ -56,20 +55,20 @@ export default function HomeScreen() {
 }
 
 const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
+  reactLogo: {
+    bottom: 0,
+    height: 178,
+    left: 0,
+    position: 'absolute',
+    width: 290,
   },
   stepContainer: {
     gap: 8,
     marginBottom: 8,
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
+  titleContainer: {
+    alignItems: 'center',
+    flexDirection: 'row',
+    gap: 8,
   },
 });

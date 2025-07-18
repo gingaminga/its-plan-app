@@ -1,6 +1,5 @@
 import { Image } from 'expo-image';
 import { Platform, StyleSheet } from 'react-native';
-
 import { Collapsible } from '@/components/Collapsible';
 import { ExternalLink } from '@/components/ExternalLink';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
@@ -11,12 +10,12 @@ import { IconSymbol } from '@/components/ui/IconSymbol';
 export default function TabTwoScreen() {
   return (
     <ParallaxScrollView
-      headerBackgroundColor={{ light: '#D0D0D0', dark: '#353636' }}
+      headerBackgroundColor={{ dark: '#353636', light: '#D0D0D0' }}
       headerImage={
         <IconSymbol
-          size={310}
           color="#808080"
           name="chevron.left.forwardslash.chevron.right"
+          size={310}
           style={styles.headerImage}
         />
       }>
@@ -98,8 +97,8 @@ export default function TabTwoScreen() {
 
 const styles = StyleSheet.create({
   headerImage: {
-    color: '#808080',
     bottom: -90,
+    color: '#808080',
     left: -35,
     position: 'absolute',
   },
