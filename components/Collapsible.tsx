@@ -12,10 +12,7 @@ export function Collapsible({ children, title }: { title: string } & PropsWithCh
 
   return (
     <ThemedView>
-      <TouchableOpacity
-        activeOpacity={0.8}
-        onPress={() => setIsOpen((value) => !value)}
-        style={styles.heading}>
+      <TouchableOpacity activeOpacity={0.8} onPress={() => setIsOpen((value) => !value)} style={styles.heading}>
         <IconSymbol
           color={theme === 'light' ? Colors.light.icon : Colors.dark.icon}
           name="chevron.right"
